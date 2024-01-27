@@ -10,4 +10,4 @@ const SearchBar = () => {
     )
 }
 
-export default EmailBody;
+export default SearchBar;

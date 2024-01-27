@@ -9,4 +9,4 @@ const SideBar = () => {
     )
 }
 
-export default EmailBody;
+export default SideBar;
