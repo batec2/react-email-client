@@ -1,12 +1,29 @@
 import './App.css';
+import EmailList from './components/emailList/emailList.component';
+import SearchBar from './components/searchbar/searchbar.component';
+import SideBar from './components/sidebar/sizebar.component';
+import EmailBody from './components/emailBody/emailBody.component';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import EmailList from './components/emailList/emailList.component';
+
+
 
 function App() {
   //const [getter,setter] = useState(initialstate);
   //useEffict(()=>{Do this, or a function},[triggers]);
   const [currentEmails, setEmails] = useState([]);
+  const [selectedEmail, setSelectedEmail] = useState({});
+  
+  const displayEmail = (id) =>{
+    // setSelectedEmail(currentEmails.find(email=> email.id===id));
+    console.log(currentEmails.find(email=> email.id===id));
+    console.log(id);
+
+  };
+
+  /**
+   * Fetches information from online and places into an array of JSON objects
+   */
   useEffect(()=>{
     const fetchEmails = async()=> {
       //Axios packaged to get all
@@ -18,9 +35,14 @@ function App() {
   },[]);//[] determines the when the useEffect is triggered, empty means trigger
 
   return (
-    <div className="App">
-      <EmailList emails = {currentEmails}></EmailList>
+    <div className='page-container'>
+    <SideBar className = 'sidebar'></SideBar>
+    <div className='email-list-search-container'>
+        <SearchBar></SearchBar>
+        <EmailList emails = {currentEmails} onClick={displayEmail}></EmailList>
     </div>
+    <EmailBody className='emailbody' email={selectedEmail}></EmailBody>
+</div>
   );
 }
 

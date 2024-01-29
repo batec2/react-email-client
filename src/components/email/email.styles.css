@@ -1,3 +1,18 @@
 .email-container{
-    border: solid black 1px;
+    border: solid black 2px;
+    padding: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.email-container:hover{
+    background-color: aqua;
+}
+
+.email-container p {
+    white-space: nowrap;/*keeps text to 1 line max*/
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

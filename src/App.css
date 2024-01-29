@@ -1,1 +1,17 @@
+.page-container{
+    display: grid;
+    grid-template-columns: auto 1fr 4fr;
+}
+
+.sidebar{
+    grid-column: 1/2;
+}
+.email-list-search-container{
+    max-width: 500px;
+    grid-column: 2/3;
+}
+
+.emailbody{
+    grid-column: 3/4;
+}
 
