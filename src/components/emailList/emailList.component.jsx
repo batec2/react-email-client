@@ -7,8 +7,8 @@ const EmailList = ({emails, onClick}) => {
         <ul className="email-list">
             {emails.map(email => {
                 return (
-                    <li onClick={(id)=> onClick(id)}>
-                        <Email key={email.id} email={email} />
+                    <li key={email.id}  onClick={()=> onClick(email.id)}>
+                        <Email email={email} />
                     </li>
                 )
             

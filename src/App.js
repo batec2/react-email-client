@@ -15,10 +15,7 @@ function App() {
   const [selectedEmail, setSelectedEmail] = useState({});
   
   const displayEmail = (id) =>{
-    // setSelectedEmail(currentEmails.find(email=> email.id===id));
-    console.log(currentEmails.find(email=> email.id===id));
-    console.log(id);
-
+    setSelectedEmail(currentEmails.find(email=> email.id===id));
   };
 
   /**

@@ -5,7 +5,10 @@ const EmailBody = ({ email }) => {
     const {address,from,message,subject} = email;
     return (
         <div className='email-body-container'>
-            <p>this is a test</p>
+            <p>{from}</p>
+            <p>{address}</p>
+            <p>{subject}</p>
+            <p>{message}</p>
         </div>
     )
 }
