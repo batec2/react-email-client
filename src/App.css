@@ -1,17 +1,31 @@
 .page-container{
-    display: grid;
-    grid-template-columns: auto 1fr 4fr;
+    display: flex;
+    grid-template-rows: 1fr;
+    min-height: 100vh;
 }
 
-.sidebar{
+.email-list-search-column{
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    min-width: 500px;
+    grid-column: 2/3;
+    max-height: 100vh;
+}
+
+.email-list-container{
+    overflow-y: scroll;
+    scrollbar-width: none; 
+}
+
+.email-list-container::-webkit-scrollbar{
+    display: none;
+}
+
+.sidebar-column{
     grid-column: 1/2;
 }
-.email-list-search-container{
-    max-width: 500px;
-    grid-column: 2/3;
-}
 
-.emailbody{
+.body-column{
     grid-column: 3/4;
 }
-

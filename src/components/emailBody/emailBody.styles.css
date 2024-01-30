@@ -1,3 +1,37 @@
 .email-body-container{
-    
+    display: flex;
+    flex-direction: column;
+    /* border: solid 2px rgba(167, 70, 212, 0.76); */
+    border-radius: 10px;
+    height: 100vh;
+    gap: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.email-body-container div{
+    width: 100%;
+}
+
+
+.from-container,.address-container,.subject-container{
+    border-radius: 10px;
+    padding-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.from-container{
+    background-color: #8f24246b;
+}
+.address-container{
+    background-color: #8f24246b;
+}
+.subject-container{
+    background-color: #8f24246b;
+}
+.message-container{
+    padding-left: 10px;
+
+    background-color: #8f24246b;
 }
