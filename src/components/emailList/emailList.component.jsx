@@ -10,8 +10,7 @@ const EmailList = ({emails, onClick}) => {
                     <li key={email.id}  onClick={()=> onClick(email.id)}>
                         <Email email={email} />
                     </li>
-                )
-            
+                );
             })}
         </ul>
     )

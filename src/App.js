@@ -15,6 +15,7 @@ function App() {
   const [filteredEmails, setFilteredEmails] = useState([]);
   const [currentTag, setTag] = useState('inbox');
   const [searchInput, setSearchInput] = useState('')
+  
   /**
    * Sets current selected email to email of given id
    * @param {number} id email id 
@@ -33,10 +34,16 @@ function App() {
     setSearchInput(input.target.value);
   }
   
+  /**
+   * Sets current tag to deleted
+   */
   const displayTrash = () =>{
     setTag('deleted');
   }
 
+  /**
+   * Sets the current tag to inbox
+   */
   const displayInbox = () =>{
     setTag('inbox');
   }
@@ -69,7 +76,7 @@ function App() {
       </div>
       <div className='email-list-search-column'>
           <div>
-            <SearchBar placeholder='Sender' handleSearch={handleSearch}></SearchBar>
+            <SearchBar placeholder='Subject' handleSearch={handleSearch}></SearchBar>
           </div>
           <div className='email-list-container'>
             <EmailList emails = {filteredEmails} onClick={displayEmail}></EmailList>
@@ -89,13 +96,12 @@ function App() {
 function filterEmails(currentEmails,searchInput,tag){
   let filtered;
   if(searchInput===''){
-    filtered = currentEmails.filter(email=>email.tag==tag);
+    filtered = currentEmails.filter(email=>email.tag===tag);
   }
   else{
     filtered = currentEmails
-      .filter((email)=>(email.from.toLowerCase().includes(searchInput.toLowerCase())
-              || email.address.toLowerCase().includes(searchInput.toLowerCase()))
-              && email.tag==tag);
+      .filter((email)=>email.subject.toLowerCase().includes(searchInput.toLowerCase())
+              && email.tag===tag);
   }
   return filtered;
 }
