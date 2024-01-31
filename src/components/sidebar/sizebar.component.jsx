@@ -2,11 +2,15 @@ import React from "react";
 import { IconTrash,IconMail } from "@tabler/icons-react";
 import './sizebar.styles.css';
 
-const SideBar = () => {
+const SideBar = ({onInbox,onTrash}) => {
     return (
         <div className='side-bar-container'>
-            <IconMail size={50}/>
-            <IconTrash size={50}/>
+            <div className='mail-container' onClick={()=>onInbox()}>
+                <IconMail size={50}/>
+            </div>
+            <div className='trash-container' onClick={()=>onTrash()}>
+                <IconTrash size={50}/>
+            </div>
         </div>
     )
 }

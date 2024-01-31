@@ -1,5 +1,17 @@
  .side-bar-container{
-    display: flex;
-    flex-direction: column;
-    padding-top: 40px;
+   display: flex;
+   flex-direction: column;
+   padding-top: 40px;
+ }
+
+ .side-bar-container div{
+   border-radius: 50%;
+ }
+
+ .side-bar-container div:hover{
+   background-color: #708d9e;
+ }
+
+ .side-bar-container div:active{
+   background-color: #86aec5;
  }

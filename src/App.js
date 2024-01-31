@@ -13,6 +13,7 @@ function App() {
   const [currentEmails, setEmails] = useState([]);
   const [selectedEmail, setSelectedEmail] = useState({});
   const [filteredEmails, setFilteredEmails] = useState([]);
+  const [currentTag, setTag] = useState('inbox');
   const [searchInput, setSearchInput] = useState('')
   /**
    * Sets current selected email to email of given id
@@ -25,13 +26,21 @@ function App() {
   };
 
   /**
-   * 
-   * @param {*} input 
+   * Sets the email body to the contenents of the input
+   * @param {email} input 
    */
-  const handleSearch = input =>{
+  const handleSearch = (input) =>{
     setSearchInput(input.target.value);
   }
   
+  const displayTrash = () =>{
+    setTag('deleted');
+  }
+
+  const displayInbox = () =>{
+    setTag('inbox');
+  }
+
   /**
    * Fetches information from online and places into an array of JSON objects
    */
@@ -49,22 +58,14 @@ function App() {
    * Filters emails depending on the user input
    */
   useEffect(()=>{
-    let filtered;
-    if(searchInput===''){
-      filtered = currentEmails;
-    }
-    else{
-      filtered = currentEmails
-        .filter((email)=>email.from.toLowerCase().includes(searchInput)
-                || email.address.toLowerCase().includes(searchInput));
-    }
+    let filtered = filterEmails(currentEmails,searchInput,currentTag)
     setFilteredEmails(filtered);
-  },[currentEmails,searchInput])
+  },[currentEmails,searchInput,currentTag]);
 
   return (
     <div className='page-container'>
       <div className='sidebar-column'>
-        <SideBar className = 'sidebar'></SideBar>
+        <SideBar className = 'sidebar' onTrash={displayTrash} onInbox={displayInbox}></SideBar>
       </div>
       <div className='email-list-search-column'>
           <div>
@@ -79,6 +80,24 @@ function App() {
       </div>
     </div>
   );
+}
+
+/**
+ * Filters a list of emails depending on input
+ * @param {emails[]} currentEmails 
+ */
+function filterEmails(currentEmails,searchInput,tag){
+  let filtered;
+  if(searchInput===''){
+    filtered = currentEmails.filter(email=>email.tag==tag);
+  }
+  else{
+    filtered = currentEmails
+      .filter((email)=>(email.from.toLowerCase().includes(searchInput.toLowerCase())
+              || email.address.toLowerCase().includes(searchInput.toLowerCase()))
+              && email.tag==tag);
+  }
+  return filtered;
 }
 
 export default App;
