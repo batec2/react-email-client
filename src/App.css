@@ -16,8 +16,11 @@
 .email-list-container{
     overflow-y: scroll;
     scrollbar-width: none; 
+    border-radius: 10px;
+    padding-top: 0;
 }
 
+/* gets rid of scroll bar */
 .email-list-container::-webkit-scrollbar{
     display: none;
 }
@@ -28,4 +31,5 @@
 
 .body-column{
     grid-column: 3/4;
+    width: 100%;
 }

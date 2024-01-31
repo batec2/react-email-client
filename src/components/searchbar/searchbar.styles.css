@@ -1,6 +1,16 @@
 .search-bar-container{
+    height: 100%;
 }
 
 .search-input{
-    
+    height: 30px;
+    background-color: #00000069;
+    color: aliceblue;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+}
+
+.search-input:focus{
+    border: none;
 }

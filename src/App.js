@@ -19,7 +19,9 @@ function App() {
    * @param {number} id email id 
    */
   const displayEmail = (id) =>{
-    setSelectedEmail(currentEmails.find(email=> email.id===id));
+    const email = filteredEmails.find(email=>email.id===id);
+    email.read = 'true';
+    setSelectedEmail(email);
   };
 
   /**

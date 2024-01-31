@@ -6,13 +6,13 @@ const EmailBody = ({ email }) => {
     return (
         <div className='email-body-container'>
             <div className='from-container'>
-                <p className='from'>{from}</p>
+                <p className='from'>From: {from}</p>
             </div>
             <div className='address-container'>
-                <p className='address'>{address}</p>
+                <p className='address'>Address: {address}</p>
             </div>
             <div className='subject-container'>
-                <p className='subject'>{subject}</p>
+                <p className='subject'>Subject: {subject}</p>
             </div>
             <div className='message-container'>
                 <p className='message'>{message}</p>    

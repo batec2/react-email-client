@@ -1,6 +1,5 @@
-.email-container{
-
-    background-color: #0000005b;
+.email-container-read{
+    background-color: #00000057;
     border-radius: 10px;
     padding: 5px;
     margin-top: 3px;
@@ -9,16 +8,46 @@
     margin-right: 2px;
 }
 
-.email-container:hover{
-    background-color: aqua;
+.email-container-unread{
+    background-color: #2c0135a1;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
-.email-container:active{
-    background-color: blueviolet;
+.email-container-read:hover, .email-container-unread:hover{
+    background-color: #2373a1;
 }
 
-.email-container p {
+.email-container-read:active,.email-container-unread:active{
+    background-color: #86aec5;
+}
+
+.email-container-read p,.email-container-unread p {
     white-space: nowrap;/*keeps text to 1 line max*/
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.name-date-container{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    height: fit-content;
+    align-items: center;
+}
+
+.from{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0;
+    grid-column: 1/2;
+}
+
+.time{
+    margin: 0;
+    grid-column: 3/4;
 }
