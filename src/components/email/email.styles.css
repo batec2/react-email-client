@@ -8,6 +8,16 @@
     margin-right: 2px;
 }
 
+.email-container-selected{
+    background-color: #af99996a;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
 .email-container-unread{
     background-color: #2c0135a1;
     border-radius: 10px;
@@ -18,11 +28,11 @@
     margin-right: 2px;
 }
 
-.email-container-read:hover, .email-container-unread:hover{
+.email-container-read:hover, .email-container-unread:hover,.email-container-selected:hover{
     background-color: #2373a1;
 }
 
-.email-container-read:active,.email-container-unread:active{
+.email-container-read:active,.email-container-unread:active,.email-container-selected:hover{
     background-color: #86aec5;
 }
 

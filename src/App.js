@@ -79,7 +79,7 @@ function App() {
             <SearchBar placeholder='Subject' handleSearch={handleSearch}></SearchBar>
           </div>
           <div className='email-list-container'>
-            <EmailList emails = {filteredEmails} onClick={displayEmail}></EmailList>
+            <EmailList emails = {filteredEmails} onClick={displayEmail} selected={selectedEmail.id}></EmailList>
           </div>
       </div>
       <div className='body-column'>
